@@ -7,6 +7,8 @@
 <h1 align="center">hbnb</h1>
 <p align="center">An AirBnB clone.</p>
 
+
+
 the console for airbnb project. Create a command interpreter that can modify or delete the database
 The users like the administrator of the app Airbnb clone has the posibility of the manipulate objects and data of the application, this objects are:
  
@@ -19,18 +21,25 @@ The users like the administrator of the app Airbnb clone has the posibility of t
 
 
 
+
+
+## Data Diagram :paperclips:
+
 <p align="center">
   <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/Data_diagram.png" alt="Data_Diagram">
 </p>
 
-<h1 align="center">Web Dynamic</h1>
-<p align="center">A Data Diagram.</p>
+<p align="center">An Data Diagram.</p>
+
+
+
+
 
 
 
 ## Classes :cl:
 
-HolbertonBnB utilizes the following classes:
+hbnb utilizes the following classes:
 
 |     | BaseModel | FileStorage | User | State | City | Amenity | Place | Review |
 | --- | --------- | ----------- | -----| ----- | -----| ------- | ----- | ------ |
@@ -41,12 +50,21 @@ HolbertonBnB utilizes the following classes:
 
 
 
+
+
+
+
+
+## Web Dynamic :bullettrain_side:
+
 <p align="center">
   <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/web_dynamic.png" alt="Web_Dynamic ">
 </p>
 
-<h1 align="center">Web Dynamic</h1>
+
 <p align="center">A Web Dynamic.</p>
+
+
 
 
 ## Requirements
@@ -148,9 +166,13 @@ EOF  help  quit
 $
 ```
 
+
+## Final Product
+
+
 <p align="center">
   <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/Final_product.png" alt="Final_Product">
 </p>
 
-<h1 align="center">Web Dynamic</h1>
+
 <p align="center">A Fianl Product.</p>
