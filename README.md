@@ -19,6 +19,15 @@ The users like the administrator of the app Airbnb clone has the posibility of t
 
 
 
+<p align="center">
+  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/Data_diagram.png" alt="Data_Diagram">
+</p>
+
+<h1 align="center">Web Dynamic</h1>
+<p align="center">A Data Diagram.</p>
+
+
+
 ## Classes :cl:
 
 HolbertonBnB utilizes the following classes:
@@ -32,7 +41,12 @@ HolbertonBnB utilizes the following classes:
 
 
 
-![alt text](https://i.ibb.co/RSzZ5yh/815046647d23428a14ca.png)
+<p align="center">
+  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/web_dynamic.png" alt="Web_Dynamic ">
+</p>
+
+<h1 align="center">Web Dynamic</h1>
+<p align="center">A Web Dynamic.</p>
 
 
 ## Requirements
@@ -134,6 +148,9 @@ EOF  help  quit
 $
 ```
 
-## AUTHORS
- 
-* **Faith Ikhidero** - [Faitholo](https://github.com/Faitholo)
+<p align="center">
+  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/Final_product.png" alt="Final_Product">
+</p>
+
+<h1 align="center">Web Dynamic</h1>
+<p align="center">A Fianl Product.</p>
