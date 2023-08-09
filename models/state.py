@@ -14,7 +14,6 @@ class State(BaseModel):
     name = ""
 
     def __init__(self, *args, **kwargs):
-        """Creates new instances of State.
-        """
+        """Creates new instances of State."""
         super().__init__(*args, **kwargs)
 
