@@ -4,7 +4,7 @@
 from models.base_model import BaseModel
 
 
-lass City(BaseModel):
+class City(BaseModel):
     """Class that defines properties of City.
 
     Attributes:
