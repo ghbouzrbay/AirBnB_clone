@@ -1,7 +1,7 @@
 # AirBnB Clone - The console :house:
 
 <p align="center">
-  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/hbnb_logo.png" alt="hbnb logo">
+  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/master/Pic/hbnb_logo.png" alt="hbnb logo">
 </p>
 
 <h1 align="center">hbnb</h1>
@@ -26,7 +26,7 @@ The users like the administrator of the app Airbnb clone has the posibility of t
 ## Data Diagram :paperclips:
 
 <p align="center">
-  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/Data_diagram.png" alt="Data_Diagram">
+  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/master/Pic/Data_diagram.png" alt="Data_Diagram">
 </p>
 
 <p align="center">An Data Diagram.</p>
@@ -58,7 +58,7 @@ hbnb utilizes the following classes:
 ## Web Dynamic :bullettrain_side:
 
 <p align="center">
-  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/web_dynamic.png" alt="Web_Dynamic ">
+  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/master/Pic/web_dynamic.png" alt="Web_Dynamic ">
 </p>
 
 
@@ -171,7 +171,7 @@ $
 
 
 <p align="center">
-  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/main/Final_product.png" alt="Final_Product">
+  <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/master/Pic/Final_product.png" alt="Final_Product">
 </p>
 
 
