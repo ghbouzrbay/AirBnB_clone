@@ -4,16 +4,16 @@
 
 
 import cmd
-import models
+import re
+from shlex import split
+from models import storage
 from models.base_model import BaseModel
-from models.__init__ import storage
 from models.user import User
 from models.state import State
 from models.city import City
-from models.amenity import Amenity
 from models.place import Place
+from models.amenity import Amenity
 from models.review import Review
-import shlex import split
 
 
 class HBNBCommand(cmd.Cmd):
@@ -26,11 +26,11 @@ class HBNBCommand(cmd.Cmd):
     cl_list = ["BaseModel", "User", "State", "City", "Amenity",
                     "Place", "Review"]
     cmd_list = {
-            "all": self.do_all,
-            "show": self.do_show,
-            "destroy": self.do_destroy,
-            "count": self.do_count,
-            "update": self.do_update
+            "all",
+            "show",
+            "destroy",
+            "count",
+            "update"
         }
    
     def do_quit(self, args):
@@ -152,7 +152,7 @@ class HBNBCommand(cmd.Cmd):
         for argv in line.split(','):
             action = action + argv
         args = shlex.split(act)
-         if len(args) == 0:
+        if len(args) == 0:
             print("** class name missing **")
             return False
 
