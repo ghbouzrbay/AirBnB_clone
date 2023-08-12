@@ -32,7 +32,7 @@ class FileStorage():
         Returns:
             dict: objects.
         """
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """Sets in __objects the obj with key <obj class name>.id.
@@ -40,38 +40,29 @@ class FileStorage():
         Args:
             obj (any): object.
         """
-        key = obj.__class__.__name__ + "." + obj.id
-        self.__objects[key] = obj
+        key = obj.__class__.__name__
+        FileStorage.__objects["{}.{}".format(ocname, obj.id)] = obj
 
     def save(self):
         """Serializes __objects to the JSON file (path: __file_path)."""
-        objct_dict = {}
-
-        for key, value in FileStorage.__objects.items():
-            objct_dict[key] = value.to_dict()
-
-        with open(FileStorage.__file_path, 'w', encoding="utf-8") as file:
-            json.dump(objct_dict, file)
+        
+        odict = FileStorage.__objects
+        objdict = {obj: odict[obj].to_dict() for obj in odict.keys()}
+        
+        with open(FileStorage.__file_path, "w") as f:
+            json.dump(objdict, f)
 
     def reload(self):
         """Deserializes the JSON file to __objects only if the JSON file __file_path exists;
                                                                        otherwise do nothing;"""
         try:
-            with open(self.__file_path, 'r', encoding='utf-8') as file:
-                data = file.read()
-        except Exception:
-            return
-        objects = eval(data)
-        for (key, value) in objects.items():
-            objects[key] = eval(key.split('.')[0] + '(**value)')
-        self.__objects = objects
+            with open(FileStorage.__file_path) as f:
+                objdict = json.load(f)
+                for o in objdict.values():
+                    cls_name = o["__class__"]
+                    del o["__class__"]
+                    self.new(eval(cls_name)(**o))
 
-    def delete(self, obj):
-        """Deletes obj from __objects"""
-        try:
-            key = obj.__class__.__name__ + '.' + str(obj.id)
-            del self.__objects[key]
-            return True
-        except Exception:
-            return False
+        except FileNotFoundError:
+            return
 
