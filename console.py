@@ -18,12 +18,12 @@ from datetime import datetime
 
 
 class HBNBCommand(cmd.Cmd):
-     """class for command processor.
+    """class for command processor.
 
     Args:
         cmd (_type_): _description_
     """
-     prompt = "(hbnb) "
+    prompt = "(hbnb) "
     cl_list = ["BaseModel", "User", "State", "City", "Amenity",
                     "Place", "Review"]
     cmd_list = {
