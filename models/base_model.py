@@ -26,14 +26,14 @@ class BaseModel:
                     self.__dict__[key] = value
 
     def __str__(self):
-        """Returns a string represation of class details.
+        '''
+        print in "[<class name>] (<self.id>) <self.__dict__>" format
+        '''
+        return ('[{}] ({}) {}'.format(
+            self.__class__.__name__,
+            self.id,
+            self.__class__.__dict__))
 
-        Returns:
-            str: class details"""
-        string_vari = "["
-        string_vari += str(self.__class__.__name__) + '] ('
-        string_vari += str(self.id) + ') ' + str(self.__dict__)
-        return string_vari
 
     def save(self):
         """Update public instance attribute updated_at with current datetime."""

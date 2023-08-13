@@ -16,6 +16,5 @@ class Amenity(BaseModel):
     name = ""
 
     def __init__(self, *args, **kwargs):
-        """Creates new instances of Amenity.
-        """
-        super().__init__(*args, **kwargs)
+        """ constructor method """
+        super().__init__(self, *args, **kwargs)
