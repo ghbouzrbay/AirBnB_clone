@@ -2,9 +2,13 @@
 """Defines a class Base"""
 
 
-import uuid
+from uuid import uuid4
 from datetime import datetime
-import models
+from models import storage
+import uuid
+import json
+import sys
+import os.path
 
 
 class BaseModel:
@@ -25,7 +29,11 @@ class BaseModel:
                 else:
                     self.__dict__[key] = value
 
+<<<<<<< HEAD
     def __str__(self):
+=======
+        def __str__(self):
+>>>>>>> b45ab44e3025d5d195616f218cd3a3dd467b02cb
         '''
         print in "[<class name>] (<self.id>) <self.__dict__>" format
         '''
