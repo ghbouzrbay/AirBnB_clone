@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """Defines a class Base"""
-
-
 import uuid
 from datetime import datetime
 import models
+
 
 class BaseModel:
     """ Class that defines properties of base """
@@ -35,9 +34,9 @@ class BaseModel:
         string_vari += str(self.id) + ') ' + str(self.__dict__)
         return string_vari
 
-
     def save(self):
-        """Update public instance attribute updated_at with current datetime."""
+        """Update public instance attribute updated_at with current datetime.
+        """
         self.updated_at = datetime.now()
         models.storage.save()
 
@@ -48,8 +47,9 @@ class BaseModel:
         Returns:
             dict: key/value pairs.
         """
-        objct_dict = self.__dict__.copy()
-        objct_dict['__class__'] = self.__class__.__name__
-        objct_dict['created_at'] = self.created_at.isoformat()
-        objct_dict['updated_at'] = self.updated_at.isoformat()
-        return objct_dict
+        dict_obj = self.__dict__.copy()
+        dict_obj['__class__'] = self.__class__.__name__
+        dict_obj['created_at'] = self.created_at.isoformat()
+        dict_obj['updated_at'] = self.updated_at.isoformat()
+        return dict_obj
+
