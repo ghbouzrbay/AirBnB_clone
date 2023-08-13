@@ -23,8 +23,8 @@ class HBNBCommand(cmd.Cmd):
     Args:
         cmd (_type_): _description_
     """
-     prompt = "(hbnb) "
-     cl_list = {
+    prompt = "(hbnb) "
+    cl_list = {
         "BaseModel": BaseModel,
         "User": User,
         "Place": Place,
@@ -36,24 +36,24 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_EOF(self, arg):
-        '''Quit command CTRL+D to exit the program'''
+        """Quit command CTRL+D to exit the program"""
         print("")
         return True
 
     def do_quit(self, arg):
-        ''' Quit command to exit the program '''
+        """ Quit command to exit the program """
         return True
 
     def do_nothing(self, arg):
-        ''' does nothing '''
+        """ does nothing """
         pass
 
     def emptyline(self):
-        ''' an empty line + ENTER shouldn’t execute anything '''
+        """ an empty line + ENTER shouldn’t execute anything """
         pass
 
     def do_create(self, args):
-        ''' Creates a new instance BaseModel, saves prints its id '''
+        """ Creates a new instance BaseModel, saves prints its id """
         if args == "":
             print("** class name missing **")
             return
@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
         print(cls.id)
 
     def do_show(self, args):
-        ''' Prints the string repr of an instances class name and id '''
+        """ Prints the string repr of an instances class name and id """
         arg = shlex.split(args)
         if len(arg) == 0:
             print("** class name missing **")
@@ -86,8 +86,8 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, args):
-        ''' Deletes an instance based on the class name and id (save changes
-            into JSON file). Ex: $ destroy BaseModel 1234-1234-1234. '''
+        """ Deletes an instance based on the class name and id (save changes
+            into JSON file). Ex: $ destroy BaseModel 1234-1234-1234. """
 
         arg = shlex.split(args)
         if len(arg) == 0:
@@ -109,8 +109,8 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, args):
-        ''' Prints all string representation of all instances based or not
-            on the class name. Ex: $ all BaseModel or $ all '''
+        """ Prints all string representation of all instances based or not
+            on the class name. Ex: $ all BaseModel or $ all """
         storage.reload()
         json_dict = []
         obj_dict = storage.all()
@@ -130,9 +130,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, args):
-        ''' Updates an instance based on the class name & id adding/updating
+        """ Updates an instance based on the class name & id adding/updating
             attribute (save the change into the JSON file). Ex: $ update
-            BaseModel 1234-1234-1234 email "aibnb@mail.com". '''
+            BaseModel 1234-1234-1234 email "aibnb@mail.com"."""
 
         if not args:
             print("** class name missing **")
@@ -169,9 +169,9 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_update_(self, args):
-        ''' Updates an instance based on the class name & id adding/updating
+        """ Updates an instance based on the class name & id adding/updating
             attribute (save the change into the JSON file). Ex: $ update
-            BaseModel 1234-1234-1234 email "aibnb@mail.com". '''
+            BaseModel 1234-1234-1234 email "aibnb@mail.com". """
 
         if not args:
             print("** class name missing **")
@@ -208,7 +208,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_count(self, args):
-        ''' counts number of instnces created '''
+        """ counts number of instnces created """
         obj = storage.all()
         cnt = 0
         for key in obj:
@@ -217,8 +217,8 @@ class HBNBCommand(cmd.Cmd):
         print(cnt)
 
     def default(self, args):
-        ''' method defines actions on objects {<>}.all(), {<>}.count()
-        {<>}.show(), {<>}.destroy(), {<>}.update()'''
+        """ method defines actions on objects {<>}.all(), {<>}.count()
+        {<>}.show(), {<>}.destroy(), {<>}.update()"""
         cmd_list = {
             "all": self.do_all,
             "count": self.do_count,
