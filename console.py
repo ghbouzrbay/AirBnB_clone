@@ -24,15 +24,16 @@ class HBNBCommand(cmd.Cmd):
         cmd (_type_): _description_
     """
      prompt = "(hbnb) "
-    cl_list = ["BaseModel", "User", "State", "City", "Amenity",
-                    "Place", "Review"]
-    cmd_list = {
-            "all",
-            "show",
-            "destroy",
-            "count",
-            "update"
-        }
+     cl_list = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "Place": Place,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Review": Review
+    }
+
 
     def do_EOF(self, arg):
         '''Quit command CTRL+D to exit the program'''
@@ -57,12 +58,12 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         arg = shlex.split(args)
-        if arg[0] not in HBNBCommand.All_class_dict:
+        if arg[0] not in HBNBCommand.cl_list:
             print("** class doesn't exist **")
             return
-        new = HBNBCommand.All_class_dict[arg[0]]()
-        new.save()
-        print(new.id)
+        cls = HBNBCommand.cl_list[arg[0]]()
+        cls.save()
+        print(cls.id)
 
     def do_show(self, args):
         ''' Prints the string repr of an instances class name and id '''
@@ -70,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             print("** class name missing **")
             return
-        if arg[0] not in HBNBCommand.All_class_dict:
+        if arg[0] not in HBNBCommand.cl_list:
             print("** class doesn't exist **")
             return
         if len(arg) < 2:
@@ -78,9 +79,9 @@ class HBNBCommand(cmd.Cmd):
             return
         storage.reload()
         obj = storage.all()
-        obj_key = arg[0] + "." + arg[1]
-        if obj_key in obj:
-            print(str(obj[obj_key]))
+        key = arg[0] + "." + arg[1]
+        if key in obj:
+            print(str(obj[key]))
         else:
             print("** no instance found **")
 
@@ -92,7 +93,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             print("** class name missing **")
             return
-        if arg[0] not in HBNBCommand.All_class_dict:
+        if arg[0] not in HBNBCommand.cl_list:
             print("** class doesn't exist **")
             return
         if len(arg) < 2:
@@ -100,9 +101,9 @@ class HBNBCommand(cmd.Cmd):
             return
         storage.reload()
         obj = storage.all()
-        obj_key = arg[0] + "." + arg[1]
-        if obj_key in obj:
-            del obj[obj_key]
+        key = arg[0] + "." + arg[1]
+        if key in obj:
+            del obj[key]
             storage.save()
         else:
             print("** no instance found **")
@@ -119,7 +120,7 @@ class HBNBCommand(cmd.Cmd):
             print(json.dumps(json_dict))
             return
         arg = shlex.split(args)
-        if arg[0] in HBNBCommand.All_class_dict.keys():
+        if arg[0] in HBNBCommand.cl_list.keys():
             for key, value in obj_dict.items():
                 if arg[0] in key:
                     json_dict.append(str(value))
@@ -140,7 +141,7 @@ class HBNBCommand(cmd.Cmd):
         storage.reload()
         obj = storage.all()
 
-        if arg[0] not in HBNBCommand.All_class_dict.keys():
+        if arg[0] not in HBNBCommand.cl_list.keys():
             print("** class doesn't exist **")
             return
         if len(arg) == 1:
@@ -180,7 +181,7 @@ class HBNBCommand(cmd.Cmd):
         storage.reload()
         obj = storage.all()
 
-        if arg[0] not in HBNBCommand.All_class_dict.keys():
+        if arg[0] not in HBNBCommand.cl_list.keys():
             print("** class doesn't exist **")
             return
         if len(arg) == 1:
@@ -218,7 +219,7 @@ class HBNBCommand(cmd.Cmd):
     def default(self, args):
         ''' method defines actions on objects {<>}.all(), {<>}.count()
         {<>}.show(), {<>}.destroy(), {<>}.update()'''
-        cmd_dict = {
+        cmd_list = {
             "all": self.do_all,
             "count": self.do_count,
             "show": self.do_show,
@@ -238,7 +239,7 @@ class HBNBCommand(cmd.Cmd):
             inputs[0] = shlex.split(inputs[0])[0]
             line = "".join(inputs)[0:-1]
             line = class_name + " " + line
-            self.do_update2(line.strip())
+            self.do_update_(line.strip())
             return
         try:
             inputs = val[1].split("(")[1].split(",")
@@ -251,8 +252,8 @@ class HBNBCommand(cmd.Cmd):
             inputs = ""
             line = ""
         line = class_name + line
-        if (command in cmd_dict.keys()):
-            cmd_dict[command](line.strip())
+        if (command in cmd_list.keys()):
+            cmd_list[command](line.strip())
 
 
 if __name__ == '__main__':
