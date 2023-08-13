@@ -18,7 +18,7 @@ from datetime import datetime
 
 
 class HBNBCommand(cmd.Cmd):
-     """class for command processor.
+    """class for command processor.
 
     Args:
         cmd (_type_): _description_
