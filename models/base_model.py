@@ -27,10 +27,10 @@ class BaseModel:
         """Returns a string represation of class details.
         Returns:
             str: class details"""
-        string_vari = "["
-        string_vari += str(self.__class__.__name__) + '] ('
-        string_vari += str(self.id) + ') ' + str(self.__dict__)
-        return string_vari
+        str_vari = "["
+        str_vari += str(self.__class__.__name__) + '] ('
+        str_vari += str(self.id) + ') ' + str(self.__dict__)
+        return str_vari
 
 
     def save(self):
