@@ -1,14 +1,9 @@
 #!/usr/bin/python3
 """Defines a class Base"""
 
-
-from uuid import uuid4
-from datetime import datetime
-from models import storage
 import uuid
-import json
-import sys
-import os.path
+from datetime import datetime
+import models
 
 class BaseModel:
     """ Class that defines properties of base """
@@ -29,12 +24,13 @@ class BaseModel:
                     self.__dict__[key] = value
 
     def __str__(self):
-        """print in "[<class name>] (<self.id>) <self.__dict__>" format"""
-
-        return ('[{}] ({}) {}'.format(
-            self.__class__.__name__,
-            self.id,
-            self.__class__.__dict__))
+        """Returns a string represation of class details.
+        Returns:
+            str: class details"""
+        string_vari = "["
+        string_vari += str(self.__class__.__name__) + '] ('
+        string_vari += str(self.id) + ') ' + str(self.__dict__)
+        return string_vari
 
 
     def save(self):
