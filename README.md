@@ -1,6 +1,5 @@
 # AirBnB Clone - The console :house:
 
-
 <p align="center">
   <img src="https://github.com/ghbouzrbay/AirBnB_clone/blob/master/Pic/hbnb_logo.png" alt="hbnb logo">
 </p>
