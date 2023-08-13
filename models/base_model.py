@@ -28,15 +28,9 @@ class BaseModel:
                     self.__dict__[key] = datetime.strptime(value, time_format)
                 else:
                     self.__dict__[key] = value
-
-<<<<<<< HEAD
     def __str__(self):
-=======
-        def __str__(self):
->>>>>>> b45ab44e3025d5d195616f218cd3a3dd467b02cb
-        '''
-        print in "[<class name>] (<self.id>) <self.__dict__>" format
-        '''
+        """print in "[<class name>] (<self.id>) <self.__dict__>" format"""
+
         return ('[{}] ({}) {}'.format(
             self.__class__.__name__,
             self.id,
