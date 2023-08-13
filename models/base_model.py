@@ -2,7 +2,6 @@
 """Defines a class Base"""
 
 
-<<<<<<< HEAD
 from uuid import uuid4
 from datetime import datetime
 from models import storage
@@ -10,12 +9,6 @@ import uuid
 import json
 import sys
 import os.path
-=======
-import uuid
-from datetime import datetime
-import models
->>>>>>> b4daca4802fd4a1550b7230df0f14bcc3965b3f9
-
 
 class BaseModel:
     """ Class that defines properties of base """
@@ -34,7 +27,7 @@ class BaseModel:
                     self.__dict__[key] = datetime.strptime(value, time_format)
                 else:
                     self.__dict__[key] = value
-<<<<<<< HEAD
+
     def __str__(self):
         """print in "[<class name>] (<self.id>) <self.__dict__>" format"""
 
@@ -43,18 +36,6 @@ class BaseModel:
             self.id,
             self.__class__.__dict__))
 
-=======
-
-    def __str__(self):
-        """Returns a string represation of class details.
-
-        Returns:
-            str: class details"""
-        string_vari = "["
-        string_vari += str(self.__class__.__name__) + '] ('
-        string_vari += str(self.id) + ') ' + str(self.__dict__)
-        return string_vari
->>>>>>> b4daca4802fd4a1550b7230df0f14bcc3965b3f9
 
     def save(self):
         """Update public instance attribute updated_at with current datetime."""
