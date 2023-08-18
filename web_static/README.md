@@ -130,11 +130,11 @@ For instance, you could write that:
 ```
 
 The fact that a text should be centered, have a certain color, and be represented in bold is part of presentation, and shouldn’t be in the HTML. The fact that it’s a paragraph, however, is part of the structure, and therefore is semantic information.
-Also, if you needed to make a whole page red, you needed to write <font color="red"> at every single line.
+Also, if you needed to make a whole page red, you needed to write ```<font color="red"> at every single line.```
 
 CSS enforces not only semantics in the HTML, but also mutualization of the presentation layer, and therefore less code.
 
-Now, <center>, <font> and <b> are banned in HTML, and we got some more semantic tags, like <strong>, <em>, and more recently, <article>, <section>, <aside>, ...
+Now, ```<center>```, <font> and <b> are banned in HTML, and we got some more semantic tags, like <strong>, <em>, and more recently, <article>, <section>, <aside>, ...
 
 Wondering about the difference between <strong> and <b>? –> (http://www.html-5-tutorial.com/strong-and-b-elements.htm)
 
