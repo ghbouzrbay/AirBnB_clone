@@ -1,6 +1,5 @@
 .places {
-	padding-top: 0.313rem;
-  margin: 1.25rem;
+	text-align: center;
 }
 
 .places h1 {
@@ -21,9 +20,9 @@
 .places article h2 {
 	font-size: 30px;
 	text-align: center;
-  top: 50%;
-	left: 50%;
+  top: 50%;	
   position: relative;
+  left: 20%;
 	display: inline-block;
   transform: translate(-50%, -50%);
 }
@@ -93,6 +92,7 @@
 }
 
 .user {
+	text-align: left;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -112,26 +112,39 @@
 
 section.places .amenities,
 section.places .reviews {
-  margin-top: 40px;
-  display: block;
-  text-align: left;
+    text-align: left;
+    margin-top: 40px;
+    display: block;
 }
 
-section.places .amenities h2,
-section.places .reviews h2 {
+section.places .amenities h2{
+	text-align: left;
   margin-bottom: 0;
   font-size: 16px;
   padding-bottom: 0.625rem;
   border-bottom: 1px solid #DDDDDD;
+  position: relative;
+  left: 37%;
+}
+section.places .reviews h2 {
+	text-align: left;
+  margin-bottom: 0;
+  font-size: 16px;
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid #DDDDDD;
+  position: relative;
+  left: 10%;
 }
 
 section.places .amenities ul {
+	text-align: left;
   margin-top: 0;
   list-style: none;
   padding-left: 0.5rem;
 }
 
 section.places .amenities ul li {
+	text-align: left;
   line-height: 1.563rem;
   background-repeat: no-repeat;
   background-size: contain;
