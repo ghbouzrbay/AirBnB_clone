@@ -1,13 +1,10 @@
 .places {
-    display: inline-block;  
-    justify-content: center;
-    width: 100%;
-  }
+	text-align: center;
+}
+
 .places h1 {
 	text-align: left;
 	font-size: 30px;
-    margin: .67em 0 .67em 0;
-	width: 100%;
 }
 
 .places article
@@ -19,16 +16,15 @@
 	border-radius: 4px;
 	display: inline-block;
 }
-  
+
 .places article h2 {
 	font-size: 30px;
 	text-align: center;
-  top: 50%;
-	left: 50%;
+  top: 50%;	
   position: relative;
-    display: inline-block;
+  left: 20%;
+	display: inline-block;
   transform: translate(-50%, -50%);
-
 }
     
   
@@ -98,7 +94,12 @@
 }
 
 .places .user {
+	text-align: left;
     margin: 20px auto 20px auto;
+}
+
+.description {
+    text-align: left;
 }
 
 footer {
