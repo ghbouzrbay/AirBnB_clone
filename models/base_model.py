@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 """Defines a class Base"""
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> f714a04ce707fa504ba7d2516befd2466130f9e1
+>>>>>>> 90b0560b5e966e0a16f17ce918b0372320b6ad0f
 import uuid
 from datetime import datetime
 import models
@@ -26,6 +33,15 @@ class BaseModel:
 
     def __str__(self):
         """Returns a string represation of class details.
+<<<<<<< HEAD
+        Returns:
+            str: class details"""
+        str_vari = "["
+        str_vari += str(self.__class__.__name__) + '] ('
+        str_vari += str(self.id) + ') ' + str(self.__dict__)
+        return str_vari
+=======
+>>>>>>> f714a04ce707fa504ba7d2516befd2466130f9e1
 
         Returns:
             str: class details
