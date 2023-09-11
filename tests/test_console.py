@@ -36,7 +36,7 @@ class TestConsole(unittest.TestCase):
         self.assertTrue(len(HBNBCommand.__doc__) > 0,
                         "** There is No docstring Found ** ")
         """Check for docstring existance"""
-    def test_docstrings_in_console(self):
+    def test_docstrings_console(self):
         """Test docstrings exist in console.py"""
         self.assertTrue(len(HBNBCommand.__doc__) >= 1)
 
@@ -47,7 +47,7 @@ class TestConsole(unittest.TestCase):
             HBNBCommand().onecmd("\n")
             self.assertEqual(fake_output.getvalue(), '')
 
-    def test_create(self):
+    def test_create_cmd(self):
         """Test cmd output: create"""
         with patch('sys.stdout', new=StringIO()) as fake_output:
             HBNBCommand().onecmd("create")
@@ -78,7 +78,7 @@ class TestConsole(unittest.TestCase):
             HBNBCommand().onecmd('all FakeClass')
             self.assertTrue(v.getvalue() == "** class doesn't exist **\n")
 
-    def test_all(self):
+    def test_all_method(self):
         ''' test all method '''
         with patch('sys.stdout', new=StringIO()) as v:
             HBNBCommand().onecmd('create BaseModel')
@@ -94,7 +94,7 @@ class TestConsole(unittest.TestCase):
             HBNBCommand().onecmd('update BaseModel')
             self.assertTrue(v.getvalue() == "** instance id missing **\n")
 
-    def test_alt_all(self):
+    def test_all(self):
         ''' test [class].all method '''
         with patch('sys.stdout', new=StringIO()) as v:
             HBNBCommand().onecmd('create User')
